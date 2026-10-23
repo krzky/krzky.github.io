@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kay — Infrastructure, Networks &amp; Embedded Systems</title>
+  <meta name="description" content="Kay (Rizky) — infrastructure and network engineer with an electrical engineering background. Networks, self-hosted services, web, and connected hardware.">
+  <meta name="author" content="Rizky">
+  <meta name="theme-color" content="#f7f1e8">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Kay — Infrastructure, Networks &amp; Embedded Systems">
+  <meta property="og:description" content="Calm infrastructure, tidy networks, and hardware that measures the real world.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Profile card for Kay — Infrastructure & Network Engineer">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+
+  <script>
+    // Set theme before first paint to avoid a flash of the wrong surface.
+    // Cream is the brand's resting state; dark is opt-in and remembered.
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ── Top strip ───────────────────────────────────────────── -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Open to collaboration</span>
+      <span class="topbar__sep" aria-hidden="true">/</span>
+      <span>Jakarta, Indonesia</span>
+    </div>
+  </div>
+
+  <!-- ── Header ──────────────────────────────────────────────── -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" aria-label="Kay — back to top">
+        Kay<span class="brand__dot" aria-hidden="true"></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#work">Work</a>
+        <a class="nav__link" href="#research">Research</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light or dark theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"></path>
+          </svg>
+        </button>
+
+        <a class="btn btn--primary" href="#contact">
+          Get in touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"></path>
+          </svg>
+        </a>
+
+        <button class="icon-btn menu-btn" id="menu-open" type="button" aria-label="Open menu" aria-controls="menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Mobile menu ─────────────────────────────────────────── -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="menu__head">
+      <span class="brand">Kay<span class="brand__dot" aria-hidden="true"></span></span>
+      <button class="icon-btn" id="menu-close" type="button" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="menu__nav" aria-label="Mobile navigation">
+      <a class="menu__link" href="#about">About <span>01</span></a>
+      <a class="menu__link" href="#work">Work <span>02</span></a>
+      <a class="menu__link" href="#research">Research <span>03</span></a>
+      <a class="menu__link" href="#skills">Skills <span>04</span></a>
+      <a class="menu__link" href="#contact">Contact <span>05</span></a>
+    </nav>
+
+    <div class="menu__foot">
+      <span>Jakarta, Indonesia</span>
+      <a href="mailto:krz@mail.uk">krz@mail.uk</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ── Hero ──────────────────────────────────────────────── -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Portfolio · 2026</p>
+
+          <h1 class="display hero__title">
+            <span>Clean systems,</span>
+            <span>from <em>cable</em></span>
+            <span>to <em>code</em>.</span>
+          </h1>
+
+          <p class="hero__lead">
+            I'm Kay — an infrastructure &amp; network engineer who also writes code
+            and builds connected hardware. My focus is simple: systems that stay calm,
+            run fast, and are easy to maintain.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#work">
+              View work
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 5v14M6 13l6 6 6-6"></path>
+              </svg>
+            </a>
+            <a class="btn btn--outline" href="#about">Get to know me</a>
+          </div>
+
+          <div class="hero__meta">
+            <span class="meta-item">Based in Jakarta</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="meta-item">Open to freelance projects</span>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <figure class="portrait-frame">
+            <picture>
+              <source type="image/webp" srcset="assets/img/portrait-800.webp 800w, assets/img/portrait-1200.webp 1200w" sizes="(max-width: 900px) 90vw, 440px">
+              <img src="assets/img/portrait-800.jpg" width="800" height="1000" alt="Portrait of Kay in a white shirt against a grey studio background" fetchpriority="high">
+            </picture>
+          </figure>
+
+          <div class="portrait-card">
+            <span class="portrait-card__status"><span class="dot" aria-hidden="true"></span> Open to collaboration</span>
+            <p class="portrait-card__name">Kay</p>
+            <p class="portrait-card__role">Infrastructure &amp; Network Engineer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Capability strip ──────────────────────────────────── -->
+    <div class="strip" aria-hidden="true">
+      <div class="container strip__track">
+        <span class="strip__item">Network infrastructure</span>
+        <span class="strip__dot"></span>
+        <span class="strip__item">Self-hosted services</span>
+        <span class="strip__dot"></span>
+        <span class="strip__item">Automation &amp; scripting</span>
+        <span class="strip__dot"></span>
+        <span class="strip__item">Web development</span>
+        <span class="strip__dot"></span>
+        <span class="strip__item">Hardware &amp; IoT</span>
+      </div>
+    </div>
+
+    <!-- ── About ─────────────────────────────────────────────── -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__aside reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="about__statement">
+            Good systems should be <em>quiet</em>.
+          </h2>
+        </div>
+
+        <div class="about__body reveal">
+          <p>
+            I'm Kay, an infrastructure and network engineer based in Indonesia, with
+            an electrical engineering background. Most days I work with networks,
+            servers, and <strong>self-hosted services</strong>; the rest of the time I
+            write code that makes them easier to maintain — or build hardware that
+            measures the physical world.
+          </p>
+          <p>
+            My approach is the same at either scale: understand the flow, document it,
+            then automate the parts that repeat. A tidy rack and a well-behaved circuit
+            are both about <strong>making the complicated feel calm</strong>.
+          </p>
+
+          <div class="disciplines">
+            <div class="discipline">
+              <span class="discipline__badge">01</span>
+              <span class="discipline__label">Network</span>
+              <span class="discipline__caption">Routing, VLAN, Wi-Fi</span>
+            </div>
+            <div class="discipline">
+              <span class="discipline__badge">02</span>
+              <span class="discipline__label">Infrastructure</span>
+              <span class="discipline__caption">Servers, Docker, services</span>
+            </div>
+            <div class="discipline">
+              <span class="discipline__badge">03</span>
+              <span class="discipline__label">Development</span>
+              <span class="discipline__caption">Web, scripts, automation</span>
+            </div>
+            <div class="discipline">
+              <span class="discipline__badge">04</span>
+              <span class="discipline__label">Hardware</span>
+              <span class="discipline__caption">IoT, sensors, embedded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Selected work ─────────────────────────────────────── -->
+    <section class="section work" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-head__text">
+            <p class="eyebrow">Selected work</p>
+            <h2>A few things I've <em>built</em>.</h2>
+          </div>
+          <div class="section-head__note">
+            Academic and personal systems — some shipped, one still under construction.
+            <a class="btn btn--outline" href="https://github.com/krzky" target="_blank" rel="noopener noreferrer">
+              View GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="work__grid">
+          <article class="project reveal">
+            <div class="project__art-link">
+              <div class="project__art art--browser">
+                <img src="assets/img/art-gp-browser.webp"
+                     width="1440" height="600"
+                     alt="GP Browser — Chromium fork cover art">
+                <span class="project__year">2026</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <span class="project__category">Desktop · Chromium</span>
+              <h3 class="project__title">GP Browser</h3>
+              <p class="project__desc">
+                A Chromium fork built for full Web Store support, with a
+                disk-backed tab engine in progress. The design parks idle tabs
+                as rows on disk instead of renderer processes, so very large
+                sessions stay usable.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li class="tag">C++</li>
+                <li class="tag">Chromium</li>
+                <li class="tag">MV3</li>
+                <li class="tag">SQLite</li>
+              </ul>
+              <div class="project__foot">
+                <span class="project__state"><span class="dot" aria-hidden="true"></span>Private build · tab engine in progress</span>
+
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="project__art-link" href="https://github.com/krzky/Ubiquiti" target="_blank" rel="noopener noreferrer" aria-label="Homelab on GitHub">
+              <div class="project__art art--lab">
+                <img src="assets/img/art-homelab.webp"
+                     width="1440" height="600"
+                     alt="Homelab — VLAN network rack dashboard">
+                <span class="project__year">2023 — present</span>
+              </div>
+            </a>
+            <div class="project__body">
+              <span class="project__category">Infrastructure · Networking</span>
+              <h3 class="project__title">Homelab</h3>
+              <p class="project__desc">
+                A home network run like production: VLAN segmentation, monitoring,
+                self-hosted mail, and services that stay up without babysitting.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li class="tag">UniFi</li>
+                <li class="tag">Docker</li>
+                <li class="tag">Mailcow</li>
+              </ul>
+              <div class="project__foot">
+                <span class="project__state"><span class="dot" aria-hidden="true"></span>Always on · self-hosted since 2023</span>
+              <a class="project__arrow" href="https://github.com/krzky/Ubiquiti" target="_blank" rel="noopener noreferrer" aria-label="Homelab on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="project__art-link" href="https://github.com/Louis-CFM/coucou" target="_blank" rel="noopener noreferrer" aria-label="Coucou upstream by Louis Raillé on GitHub">
+              <div class="project__art art--coucou">
+                <img src="assets/img/art-coucou.webp"
+                     width="720" height="344"
+                     alt="Coucou — Claude Code companion app screenshot">
+                <span class="project__year">2026</span>
+              </div>
+            </a>
+            <div class="project__body">
+              <span class="project__category">Fork · Swift · Tauri</span>
+              <h3 class="project__title">Coucou fork</h3>
+              <p class="project__desc">
+                <strong>Louis Raillé's app, not mine.</strong> Coucou is an
+                MIT-licensed Claude Code companion that lives in your macOS notch or
+                Windows taskbar. My fork keeps his shell and adds the assistant layer
+                on top: three model brains behind a local router with failover, PC
+                control, self-improve, per-chat cloud sessions, and a signed Windows
+                installer.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li class="tag">Swift 6</li>
+                <li class="tag">Tauri 2</li>
+                <li class="tag">Rust</li>
+                <li class="tag">TypeScript</li>
+              </ul>
+              <div class="project__foot">
+                <span class="project__state"><span class="dot" aria-hidden="true"></span>Fork of Louis Raillé's Coucou · 138 added / 55 modified</span>
+              <a class="project__arrow" href="https://github.com/Louis-CFM/coucou" target="_blank" rel="noopener noreferrer" aria-label="Upstream Coucou on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="project__art-link" href="https://github.com/krzky" target="_blank" rel="noopener noreferrer" aria-label="GemaPro Assistant on GitHub">
+              <div class="project__art art--assistant">
+                <img src="assets/img/art-gemapro-assistant.webp"
+                     width="1440" height="600"
+                     alt="GemaPro Assistant — desktop PLC assistant screenshot">
+                <span class="project__year">2025</span>
+              </div>
+            </a>
+            <div class="project__body">
+              <span class="project__category">Desktop · C# · .NET 8</span>
+              <h3 class="project__title">GemaPro Assistant</h3>
+              <p class="project__desc">
+                A local technical assistant for PLC (SCL / ladder / TIA Portal),
+                Arduino and C++, Visual Studio, and SolidWorks work. Around seventy
+                focused tools run through a LiteLLM gateway, with session context that
+                keeps earlier fixes and part numbers close.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li class="tag">C#</li>
+                <li class="tag">.NET 8</li>
+                <li class="tag">Avalonia</li>
+                <li class="tag">LiteLLM</li>
+              </ul>
+              <div class="project__foot">
+                <span class="project__state"><span class="dot" aria-hidden="true"></span>Private build · local-first</span>
+              <a class="project__arrow" href="https://github.com/krzky" target="_blank" rel="noopener noreferrer" aria-label="GemaPro Assistant on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a class="project__art-link" href="https://github.com/krzky/fileshare" target="_blank" rel="noopener noreferrer" aria-label="Fileshare on GitHub">
+              <div class="project__art art--files">
+                <img src="assets/img/art-fileshare.webp"
+                     width="1440" height="600"
+                     alt="Fileshare — self-hosted file sharing UI">
+                <span class="project__year">2023</span>
+              </div>
+            </a>
+            <div class="project__body">
+              <span class="project__category">Web · Python</span>
+              <h3 class="project__title">Fileshare</h3>
+              <p class="project__desc">
+                A small self-hosted file sharing service: upload a file, get a link,
+                and share it without leaving the terminal or opening a drive. Meant for
+                quick handoffs between machines on the same network.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li class="tag">Python</li>
+                <li class="tag">Flask</li>
+                <li class="tag">HTML &amp; CSS</li>
+              </ul>
+              <div class="project__foot">
+                <span class="project__state"><span class="dot" aria-hidden="true"></span>Shipped · runs on the LAN</span>
+              <a class="project__arrow" href="https://github.com/krzky/fileshare" target="_blank" rel="noopener noreferrer" aria-label="Fileshare on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project__art-link">
+              <div class="project__art art--sensor">
+                <img src="assets/img/art-network-monitor.webp"
+                     width="1440" height="600"
+                     alt="Network Monitor — latency dashboard with host list">
+                <span class="project__year">2024</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <span class="project__category">Network · Python</span>
+              <h3 class="project__title">Network Monitor</h3>
+              <p class="project__desc">
+                A continuous network monitoring tool that pings configured hosts,
+                logs latency and packet loss, and sends Slack/Email alerts when
+                thresholds are exceeded. Includes a web dashboard, historical
+                trend charts, and a simple runbook for troubleshooting common
+                connectivity issues.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li class="tag">Python</li>
+                <li class="tag">Flask</li>
+                <li class="tag">Prometheus</li>
+                <li class="tag">HTML &amp; CSS</li>
+              </ul>
+              <div class="project__foot">
+                <span class="project__state"><span class="dot" aria-hidden="true"></span>99.9% uptime check · custom alerts</span>
+
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Research / thesis ─────────────────────────────────── -->
+    <section class="section research" id="research">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-head__text">
+            <p class="eyebrow">Undergraduate thesis · 2026</p>
+            <h2>An outlet that <em>thinks</em> before it cuts.</h2>
+          </div>
+          <p class="section-head__note">
+            Final project in Electrical Engineering at President University — a
+            single-phase smart outlet that measures, protects, and keeps its record
+            when the network goes down.
+          </p>
+        </div>
+
+        <div class="research__grid">
+          <article class="research__paper reveal">
+            <p class="research__kicker">
+              Electricity Safety and Usage Monitoring Using Arduino Nano Every
+              with a Web-Based Power Outlet System
+            </p>
+            <p class="research__lede">
+              A traditional outlet protects nothing and reports nothing. This
+              prototype adds a PZEM-004T energy sensor, MCCB and relay cutoff, and
+              a W5500 Ethernet link to a web dashboard — so an ordinary wall
+              socket can warn, disconnect, and account for every watt.
+            </p>
+            <p class="research__body">
+              The hard part was not the dashboard; it was keeping the record intact.
+              When connectivity drops, readings are written to a 32 KB AT24C256
+              EEPROM and replayed to the server once the link returns. The same
+              controller drives an OLED readout, RGB status light, and an audible
+              alarm, so the state of the circuit stays legible with or without a
+              browser.
+            </p>
+            <ul class="tags" aria-label="Thesis technologies">
+              <li class="tag">Arduino C++</li>
+              <li class="tag">ATmega4809</li>
+              <li class="tag">PZEM-004T</li>
+              <li class="tag">W5500</li>
+              <li class="tag">Web dashboard</li>
+            </ul>
+            <p class="research__credit">Kay · President University · 2026</p>
+          </article>
+
+          <aside class="research__panel reveal" aria-label="System summary">
+            <figure class="schematic">
+              <div class="schematic__row">
+                <span class="node">220 V AC</span>
+                <span class="arrow" aria-hidden="true">→</span>
+                <span class="node">MCCB</span>
+                <span class="arrow" aria-hidden="true">→</span>
+                <span class="node">PZEM-004T</span>
+                <span class="arrow" aria-hidden="true">→</span>
+                <span class="node">Relay</span>
+                <span class="arrow" aria-hidden="true">→</span>
+                <span class="node node--accent">Outlet</span>
+              </div>
+              <div class="schematic__bus" aria-hidden="true"></div>
+              <div class="schematic__row schematic__row--ctrl">
+                <span class="node node--chip">Arduino Nano Every</span>
+                <span class="node">AT24C256 · 32 KB</span>
+                <span class="node">W5500</span>
+                <span class="node node--web">Web dashboard</span>
+              </div>
+              <figcaption>
+                Measurement, protection, backup, and remote reporting on one
+                single-phase line.
+              </figcaption>
+            </figure>
+
+            <dl class="specs">
+              <div><dt>Controller</dt><dd>Arduino Nano Every · ATmega4809</dd></div>
+              <div><dt>Protection</dt><dd>MCCB + relay, 2,200 W threshold</dd></div>
+              <div><dt>Link</dt><dd>W5500 Ethernet · HTTP</dd></div>
+              <div><dt>Refresh</dt><dd>5 s dashboard updates</dd></div>
+              <div><dt>Backup</dt><dd>~40 min of readings at 5 s intervals</dd></div>
+              <div><dt>Tested</dt><dd>219–230 V · 0.1–8.1 A · 22–1,000 W</dd></div>
+            </dl>
+            <p class="research__note">
+              Ten test points per parameter, checked against a calibrated
+              multimeter and clamp meter.
+            </p>
+          </aside>
+        </div>
+
+        <ul class="metrics reveal" aria-label="Measured thesis results">
+          <li>
+            <strong>99.43<span class="metric__unit">%</span></strong>
+            <span class="metric__label">voltage accuracy</span>
+          </li>
+          <li>
+            <strong>99.69<span class="metric__unit">%</span></strong>
+            <span class="metric__label">current accuracy</span>
+          </li>
+          <li>
+            <strong>99.2<span class="metric__unit">%</span></strong>
+            <span class="metric__label">power accuracy</span>
+          </li>
+          <li>
+            <strong>219<span class="metric__unit">ms</span></strong>
+            <span class="metric__label">protection response</span>
+          </li>
+          <li>
+            <strong>72<span class="metric__unit">h</span></strong>
+            <span class="metric__label">continuous run</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Toolkit (ink band) ────────────────────────────────── -->
+    <section class="section band" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-head__text">
+            <p class="eyebrow">Toolkit</p>
+            <h2>Tools I use<br><em>every day</em>.</h2>
+          </div>
+          <p class="section-head__note" style="color: var(--on-dark-dim);">
+            Not everything I've ever touched — only what's genuinely part of
+            my workflow.
+          </p>
+        </div>
+
+        <div class="toolkit">
+          <div class="toolkit__col reveal">
+            <h3 class="toolkit__title">Infrastructure</h3>
+            <ul class="stack">
+              <li class="stack__item"><span class="stack__name">Linux</span><span class="stack__note">Servers &amp; daily driver</span></li>
+              <li class="stack__item"><span class="stack__name">Docker</span><span class="stack__note">Containers</span></li>
+              <li class="stack__item"><span class="stack__name">UniFi</span><span class="stack__note">Networking</span></li>
+              <li class="stack__item"><span class="stack__name">Mailcow</span><span class="stack__note">Self-hosted email</span></li>
+              <li class="stack__item"><span class="stack__name">Nginx</span><span class="stack__note">Reverse proxy</span></li>
+            </ul>
+          </div>
+
+          <div class="toolkit__col reveal">
+            <h3 class="toolkit__title">Development</h3>
+            <ul class="stack">
+              <li class="stack__item"><span class="stack__name">Python</span><span class="stack__note">Scripts &amp; services</span></li>
+              <li class="stack__item"><span class="stack__name">TypeScript</span><span class="stack__note">Web</span></li>
+              <li class="stack__item"><span class="stack__name">C / C++</span><span class="stack__note">Embedded &amp; systems</span></li>
+              <li class="stack__item"><span class="stack__name">HTML &amp; CSS</span><span class="stack__note">Interfaces</span></li>
+              <li class="stack__item"><span class="stack__name">Git</span><span class="stack__note">Version control</span></li>
+            </ul>
+          </div>
+
+          <div class="toolkit__col reveal">
+            <h3 class="toolkit__title">Hardware</h3>
+            <ul class="stack">
+              <li class="stack__item"><span class="stack__name">Arduino</span><span class="stack__note">Microcontrollers</span></li>
+              <li class="stack__item"><span class="stack__name">Sensors &amp; IoT</span><span class="stack__note">PZEM, EEPROM</span></li>
+              <li class="stack__item"><span class="stack__name">W5500</span><span class="stack__note">Wired Ethernet</span></li>
+              <li class="stack__item"><span class="stack__name">KiCad</span><span class="stack__note">PCB design</span></li>
+              <li class="stack__item"><span class="stack__name">Diagnostics</span><span class="stack__note">Troubleshooting</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="quote reveal">
+          <blockquote class="quote__text">
+            “If a system works without needing attention, the
+            <em>job is done</em>.”
+          </blockquote>
+          <figcaption class="quote__cite">— Working principle</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── Contact ───────────────────────────────────────────── -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="contact__title">Got an idea? Let's <em>talk</em>.</h2>
+          <p class="contact__lead">
+            Open to infrastructure projects, web development, or just trading notes on
+            tidy systems. I usually reply within one to two business days.
+          </p>
+        </div>
+
+        <div class="contact__actions reveal">
+          <a class="btn btn--cream" href="mailto:krz@mail.uk">
+            Send an email
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+          <a class="btn btn--ghost-light" href="https://github.com/krzky" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9"></path>
+            </svg>
+          </a>
+          <a class="contact__email" href="mailto:krz@mail.uk">krz@mail.uk</a>
+          <p class="contact__note">Typical response time is 1–2 business days. No forms, no queues.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="footer__brand" href="#top">Kay<span class="brand__dot" aria-hidden="true"></span></a>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#research">Research</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/krzky" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Kay (Rizky). Built by hand, from scratch.</span>
+        <a href="#top">Back to top
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5M6 11l6-6 6 6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
